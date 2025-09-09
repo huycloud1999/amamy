@@ -20,20 +20,20 @@ export default function FAQItem({
       <button
         type='button'
         onClick={() => setOpen(!open)}
-        className='bg-white w-full py-[1.875rem] px-[1.875rem] flex items-center justify-between border border-[#E3DBD8] rounded-3xl relative z-10'
+        className='bg-white w-full py-[1.875rem] px-[1.875rem] xsm:p-5 flex items-center justify-between gap-5 border border-[#E3DBD8] rounded-3xl relative z-10'
       >
-        <h3 className='font-montserrat text-lg leading-7 font-semibold'>
+        <h3 className='text-left font-montserrat text-lg xsm:text-sm leading-7 font-semibold xsm:font-medium'>
           {content}
         </h3>
         <div
           className={cn(
-            'size-[1.999rem] rounded-full flex items-center justify-center bg-[#CCCCCC] transition-all duration-300',
+            'flex-shrink-0 size-[1.999rem] xsm:size-5 rounded-full flex items-center justify-center bg-[#CCCCCC] transition-all duration-300',
             open && 'bg-Blue-Primary',
           )}
         >
           <ArrowUp
             className={cn(
-              'size-4 text-white transition-all duration-300',
+              'size-4 xsm:size-3 text-white transition-all duration-300',
               !open && 'rotate-180',
             )}
           />
@@ -49,7 +49,7 @@ export default function FAQItem({
           {detail.split('\n').map((line, index) => (
             <p
               key={index}
-              className='font-montserrat text-base leading-[1.875rem] text-[#727272] whitespace-pre-wrap'
+              className='font-montserrat text-base xsm:text-sm xsm:leading-6 leading-[1.875rem] text-[#727272] whitespace-pre-wrap'
             >
               {line}
             </p>
