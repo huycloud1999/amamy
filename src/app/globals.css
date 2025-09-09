@@ -296,7 +296,22 @@ input[type='number'] {
   stroke: #38b6ff;
 }
 
-
 .drawer-transition {
   transtion: all 0.7s ease-in-out;
+}
+
+.btn-faq[data-state='open'] {
+  @apply text-Blue-Primary;
+}
+
+.btn-faq > .lucide-chevron-down {
+  @apply -rotate-90;
+}
+
+.btn-faq:hover > .lucide-chevron-down {
+  @apply text-Blue-Primary;
+}
+
+.btn-faq[data-state='open'] > .lucide-chevron-down {
+  @apply rotate-0 text-Blue-Primary;
 }
