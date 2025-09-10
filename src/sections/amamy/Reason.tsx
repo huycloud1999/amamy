@@ -6,20 +6,20 @@ import Image from 'next/image'
 const reasons = [
   {
     id: 1,
-    image: '/question/reason-1.png',
+    image: '/amamy/reason-1.png',
     title: 'Carton 5 lớp',
     content: 'Hàng hóa được đóng gói chuẩn quốc tế',
   },
   {
     id: 2,
-    image: '/question/reason-2.png',
+    image: '/amamy/reason-2.png',
     title: 'Chuyên môn cao',
     content:
       'Nhân viên am hiểu về dịch vụ, cùng với hệ thống quản lý giúp giao hàng quốc tế đúng dự kiến, chính xác',
   },
   {
     id: 3,
-    image: '/question/reason-3.png',
+    image: '/amamy/reason-3.png',
     title: 'Bảo hiểm hàng hóa',
     content:
       'Nhân viên am hiểu về dịch vụ, cùng với hệ thống quản lý giúp giao hàng quốc tế đúng dự kiến, chính xác',
