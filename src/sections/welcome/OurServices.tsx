@@ -2,6 +2,7 @@
 import { useRef, useEffect } from 'react'
 import Image from 'next/image'
 import { gsap } from 'gsap'
+import { useGSAP } from '@gsap/react'
 import { Draggable } from 'gsap/Draggable'
 import { InertiaPlugin } from 'gsap/InertiaPlugin'
 import useIsMobile from '@/hooks/useIsMobile'
@@ -9,31 +10,31 @@ import useIsMobile from '@/hooks/useIsMobile'
 const ourServices = [
   {
     step: 1,
-    icon: '/wellcome/recep.png',
+    icon: '/welcome/recep.png',
     title: 'Tiếp nhận yêu cầu & \ntư vấn (miễn phí)',
     text: 'Lorem Ipsum is simply dummy text th printing and typese Lorem Ipm  been the industry\'s standard '
   },
   {
     step: 2,
-    icon: '/wellcome/pack.png',
+    icon: '/welcome/pack.png',
     title: 'Nhận hàng & đóng \ngói an toàn',
     text: 'Lorem Ipsum is simply dummy text th printing and typese Lorem Ipm  been the industry\'s standard '
   },
   {
     step: 3,
-    icon: '/wellcome/payment.png',
+    icon: '/welcome/payment.png',
     title: 'Thanh toán dễ dàng\n bằng EUR hoặc VNĐ',
     text: 'Lorem Ipsum is simply dummy text th printing and typese Lorem Ipm  been the industry\'s standard '
   },
   {
     step: 4,
-    icon: '/wellcome/delivery.png',
+    icon: '/welcome/delivery.png',
     title: 'Vận chuyển & giao hàng\n tận nơi tại Pháp',
     text: 'Lorem Ipsum is simply dummy text th printing and typese Lorem Ipm  been the industry\'s standard '
   },
   {
     step: 5,
-    icon: '/wellcome/protect.png',
+    icon: '/welcome/protect.png',
     title: 'Bảo hiểm toàn diện –\n đền bù 100% hỏng vỡ',
     text: 'Lorem Ipsum is simply dummy text th printing and typese Lorem Ipm  been the industry\'s standard '
   },
@@ -62,10 +63,23 @@ const OurServices = () => {
     }
   }, [isMobile])
 
+  useGSAP(() => {
+    gsap.from('.fade-in-box-card-step-services', {
+      scrollTrigger: {
+        trigger: '.fade-in-box-card-step-services',
+        start: 'top 80%',
+      },
+      opacity: 0,
+      x: 50,
+      duration: 1,
+      stagger: 0.2,
+    })
+  }, [])
+
   return (
     <div className='px-[80px] xsm:p-0 bg-white'>
 
-      <div className="relative flex flex-col gap-[60px] xsm:gap-[26px] bg-white pb-[116px] pt-[40px] rounded-[50px] xsm:rounded-none bg-[url(/wellcome/bg-ourservices.png)] xsm:bg-[url(/wellcome/bg-ourservices-mb.png)] bg-cover bg-no-repeat">
+      <div className="relative flex flex-col gap-[60px] xsm:gap-[26px] bg-white pb-[116px] xsm:pb-[52px] pt-[40px] rounded-[50px] xsm:rounded-none bg-[url(/welcome/bg-ourservices.png)] xsm:bg-[url(/welcome/bg-ourservices-mb.png)] bg-cover bg-no-repeat">
 
         {/* Header */}
         <div className="flex flex-col items-center justify-center gap-[12px]">
@@ -78,7 +92,7 @@ const OurServices = () => {
           <div ref={contentRef} className="max-w-[1299px] xsm:max-w-max xsm:w-max mx-auto xsm:pl-[56px] xsm:pr-[28px] flex-wrap xsm:flex-nowrap flex justify-center gap-[68px]">
             {
               ourServices.map((step, i) => (
-                <div key={i} className="bg-white w-[370px] xsm:w-[249px] h-full flex flex-col rounded-[20px] border border-[#E3DBDB] pl-[70px] xsm:pl-[47px] pt-[35px] pb-[46px] xsm:pb-[32px] relative">
+                <div key={i} className="fade-in-box-card-step-services bg-white w-[370px] xsm:w-[249px] h-full flex flex-col rounded-[20px] border border-[#E3DBDB] pl-[70px] xsm:pl-[47px] pt-[35px] pb-[46px] xsm:pb-[32px] relative">
                   <span className="font-semibold text-[18px] xsm:text-[16px] leading-[28px] tracking-normal text-[#727272]" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>
                     {String(step.step).padStart(2, '0')}
                   </span>
