@@ -1,3 +1,6 @@
+'use client'
+import {useGSAP} from '@gsap/react'
+import gsap from 'gsap'
 import Image from 'next/image'
 
 const services = [
@@ -39,13 +42,25 @@ const services = [
 ]
 
 export default function OurService() {
+  useGSAP(() => {
+    gsap.from('.fade-in-box-service-cards', {
+      scrollTrigger: {
+        trigger: '.fade-in-box-service-cards',
+        start: 'top 80%',
+      },
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      stagger: 0.2,
+    })
+  }, [])
   return (
     <section className='sm:px-[6rem] px-4 bg-white'>
       <div className='bg-[url("/question/service-decoration.png")] xsm:bg-[url("/question/service-decoration-mobile.png")] bg-[length:100%_calc(100%+5.938rem)] xsm:bg-[length:100%_calc(100%+2.063rem)] bg-left-top bg-no-repeat shadow-[0_2px_6.4px_-1px_#13102208] pt-[3.313rem] pb-[5.938rem] xsm:pb-[2.063rem]'>
-        <p className='font-montserrat text-xl text-center text-Blue-Primary font-semibold leading-7 xsm:text-sm'>
+        <p className='fade-in-box font-montserrat text-xl text-center text-Blue-Primary font-semibold leading-7 xsm:text-sm'>
           Dịch vụ của chúng tôi
         </p>
-        <h1 className='font-montserrat text-[3.125rem] leading-[3.75rem] text-center font-bold mb-[3.75rem] xsm:text-2xl xsm:mb-[1.688rem]'>
+        <h1 className='fade-in-box font-montserrat text-[3.125rem] leading-[3.75rem] text-center font-bold mb-[3.75rem] xsm:text-2xl xsm:mb-[1.688rem]'>
           {' '}
           Quy Trình Gửi Hàng
         </h1>
@@ -54,7 +69,7 @@ export default function OurService() {
             {services.map((service) => (
               <div
                 key={service.id}
-                className='flex-[0_0_23.125rem] xsm:flex-[0_0_15.438rem] w-full relative rounded-[1.25rem] border border-[#E3DBD8] bg-white py-[1.875rem] pl-[4.375rem] pr-[2.5rem] font-montserrat xsm:first:ml-9 xsm:pl-[2.938rem] xsm:pr-5'
+                className='fade-in-box-service-cards flex-[0_0_23.125rem] xsm:flex-[0_0_15.438rem] w-full relative rounded-[1.25rem] border border-[#E3DBD8] bg-white py-[1.875rem] pl-[4.375rem] pr-[2.5rem] font-montserrat xsm:first:ml-9 xsm:pl-[2.938rem] xsm:pr-5'
               >
                 <span className='inline-block font-semibold text-lg leading-7 text-[#727272] xsm:text-base mb-[0.313rem]'>
                   {service.id.toString().padStart(2, '0')}

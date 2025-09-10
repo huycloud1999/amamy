@@ -7,16 +7,18 @@ import {useState} from 'react'
 export default function FAQItem({
   content,
   detail,
+  className,
   initialOpen = false,
 }: {
   content: string
   detail: string
+  className?: string
   initialOpen?: boolean
 }) {
   const [open, setOpen] = useState(initialOpen)
 
   return (
-    <div className='relative'>
+    <div className={cn('relative', className)}>
       <button
         type='button'
         onClick={() => setOpen(!open)}
@@ -43,7 +45,11 @@ export default function FAQItem({
         style={{
           maxHeight: open ? 500 : 0,
         }}
-        className='shadow-[0_4.4px_20px_-1px_#1310220D] bg-white rounded-b-3xl -mt-6 pt-6 overflow-hidden transition-[max-height] duration-300'
+        className={cn(
+          'bg-white rounded-b-3xl -mt-6 pt-6 overflow-hidden transition-[max-height] duration-300',
+          open && 'ease-in shadow-[0_4.4px_20px_-1px_#1310220D]',
+          !open && 'ease-out',
+        )}
       >
         <div className='py-[0.938rem] px-[1.875rem]'>
           {detail.split('\n').map((line, index) => (

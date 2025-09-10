@@ -1,4 +1,5 @@
-import FAQItem from '@/components/question/FAQItem'
+'use client'
+import FAQItem from '@/components/amamy/FAQItem'
 import {
   Accordion,
   AccordionContent,
@@ -93,7 +94,7 @@ export default function FAQ() {
     <section className='bg-white'>
       <div className='sm:px-[6rem] px-4 sm:pt-0'>
         <div className='pb-[2.438rem] pt-12 xsm:pb-9 xsm:pt-9'>
-          <h1 className='font-montserrat font-bold text-[2.5rem] xsm:text-2xl leading-none mb-8 xsm:text-center'>
+          <h1 className='fade-in-box font-montserrat font-bold text-[2.5rem] xsm:text-2xl leading-none mb-8 xsm:text-center'>
             Câu hỏi thường gặp
           </h1>
           <div className='flex xsm:flex-col gap-[1.938rem] xsm:gap-[2.188rem]'>
@@ -104,6 +105,7 @@ export default function FAQ() {
                   content={faq.content}
                   detail={faq.detail}
                   initialOpen={index < 2}
+                  className='fade-in-box'
                 />
               ))}
             </div>
@@ -111,7 +113,7 @@ export default function FAQ() {
               <Accordion
                 type='single'
                 collapsible
-                className='bg-[#F4FBFF] rounded-3xl px-[2.5rem] py-5 mb-[1.438rem] xsm:hidden'
+                className='fade-in-box bg-[#F4FBFF] rounded-3xl px-[2.5rem] py-5 mb-[1.438rem] xsm:hidden'
               >
                 {datas.map((data, index) => (
                   <AccordionItem
@@ -131,7 +133,7 @@ export default function FAQ() {
               <Accordion
                 type='single'
                 collapsible
-                className='bg-[#F4FBFF] rounded-3xl p-5 mb-6 hidden xsm:block'
+                className='fade-in-box bg-[#F4FBFF] rounded-3xl p-5 mb-6 hidden xsm:block'
               >
                 <AccordionItem
                   value='item-1'
@@ -146,7 +148,7 @@ export default function FAQ() {
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
-              <div className='rounded-3xl bg-[#F4FBFF] py-11 px-[4.375rem] xsm:px-[1.375rem] xsm:py-4 flex flex-col items-center xsm:flex-row xsm:gap-5'>
+              <div className='fade-in-box rounded-3xl bg-[#F4FBFF] py-11 px-[4.375rem] xsm:px-[1.375rem] xsm:py-4 flex flex-col items-center xsm:flex-row xsm:gap-5'>
                 <h3 className='font-montserrat text-[1.375rem] font-bold leading-[1.875rem] text-center mb-[1.875rem] xsm:hidden'>
                   Liên hệ tư vấn trực tiếp
                 </h3>

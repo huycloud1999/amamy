@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 'use client'
 
-import useIsMobile from '@/hooks/useIsMobile'
 import {useGSAP} from '@gsap/react'
 import {gsap} from 'gsap'
 import {CustomEase} from 'gsap/dist/CustomEase'
@@ -11,7 +10,6 @@ import {ScrollTrigger} from 'gsap/dist/ScrollTrigger'
 gsap.registerPlugin(useGSAP, ScrollTrigger, CustomEase, ScrollToPlugin)
 
 export default function GsapProvider({children}: {children: React.ReactNode}) {
-  const isMobile = useIsMobile()
   useGSAP(() => {
     CustomEase.create('easeOut', '0,0,0.58,1')
     CustomEase.create('easeInOut', '0.42,0,0.58,1')
@@ -34,7 +32,7 @@ export default function GsapProvider({children}: {children: React.ReactNode}) {
         duration: 1,
       }),
     )
-  }, [isMobile])
+  }, [])
   return (
     <div id='smooth-wrapper'>
       <div id='smooth-content'>{children}</div>

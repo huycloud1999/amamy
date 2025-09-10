@@ -3,10 +3,10 @@ import getMetaDataRankMath from '@/fetch/getMetaDataRankMath'
 import getSchemaMarkup from '@/fetch/getSchemaMarkup'
 import RelatedBlogsV2 from '@/sections/blog/detail/RelatedBlogsV2'
 import Banner from '@/sections/homepage/banner'
-import FAQ from '@/sections/question/FAQ'
-import Hero from '@/sections/question/Hero'
-import OurService from '@/sections/question/OurService'
-import Reason from '@/sections/question/Reason'
+import FAQ from '@/sections/amamy/FAQ'
+import Hero from '@/sections/amamy/Hero'
+import OurService from '@/sections/amamy/OurService'
+import Reason from '@/sections/amamy/Reason'
 import metadataValues from '@/utils/metadataValues'
 
 export async function generateMetadata() {
@@ -14,7 +14,7 @@ export async function generateMetadata() {
   return metadataValues(res)
 }
 
-export default async function Question() {
+export default async function Amamy() {
   const fetchDataACF = fetchData({
     api: 'pages/11',
     option: {

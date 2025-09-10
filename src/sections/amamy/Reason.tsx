@@ -1,3 +1,6 @@
+'use client'
+import {useGSAP} from '@gsap/react'
+import gsap from 'gsap'
 import Image from 'next/image'
 
 const reasons = [
@@ -24,22 +27,35 @@ const reasons = [
 ]
 
 export default function Reason() {
+  useGSAP(() => {
+    gsap.from('.fade-in-box-reason-cards', {
+      scrollTrigger: {
+        trigger: '.fade-in-box-reason-cards',
+        start: 'top 80%',
+      },
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      stagger: 0.2,
+    })
+  }, [])
+
   return (
     <section className='bg-white'>
       <div className='sm:px-[6rem] px-4 pb-[7.25rem] pt-[4.188rem] xsm:pb-9 xsm:pt-9'>
-        <p className='font-montserrat font-semibold text-center text-[2rem] xsm:text-base xsm:leading-7 leading-7 text-Blue-Primary mb-6 xsm:mb-2'>
+        <p className='fade-in-box font-montserrat font-semibold text-center text-[2rem] xsm:text-base xsm:leading-7 leading-7 text-Blue-Primary mb-6 xsm:mb-2'>
           Lý do nên chọn gửi hàng tại Amamy?
         </p>
-        <h1 className='font-montserrat font-bold text-[2.5rem] xsm:text-xl leading-none text-center mb-[4.063rem] max-w-[71.688rem] mx-auto xsm:mb-7'>
+        <h1 className='fade-in-box font-montserrat font-bold text-[2.5rem] xsm:text-xl leading-none text-center mb-[4.063rem] max-w-[71.688rem] mx-auto xsm:mb-7'>
           Amamy dịch vụ Logistic với 4 năm kinh nghiệm và hơn 18.000 khách hàng
           Việt Nam tại nước ngoài
         </h1>
-        <div className='overflow-hidden'>
+        <div className='xsm:overflow-hidden'>
           <div className='flex items-start gap-[6.063rem] xsm:gap-2.5 xsm:overflow-x-auto'>
             {reasons.map((reason) => (
               <div
                 key={reason.id}
-                className='flex flex-col items-center xsm:items-start flex-1 xsm:flex-none'
+                className='fade-in-box-reason-cards flex flex-col items-center xsm:items-start flex-1 xsm:flex-none'
               >
                 <Image
                   src={reason.image}
