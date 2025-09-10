@@ -2,7 +2,7 @@
 import { useRef, useEffect } from 'react'
 import Image from 'next/image'
 import { gsap } from 'gsap'
-import {useGSAP} from '@gsap/react'
+import { useGSAP } from '@gsap/react'
 import { Draggable } from 'gsap/Draggable'
 import { InertiaPlugin } from 'gsap/InertiaPlugin'
 import useIsMobile from '@/hooks/useIsMobile'
@@ -57,36 +57,36 @@ const Reason = () => {
   }, [isMobile])
 
   useGSAP(() => {
-  const mm = gsap.matchMedia()
+    const mm = gsap.matchMedia()
 
-  mm.add('(min-width: 639px)', () => {
-    // Desktop & tablet: animate theo Y
-    gsap.from('.fade-in-box-card-reason', {
-      scrollTrigger: {
-        trigger: '.fade-in-box-card-reason',
-        start: 'top 80%',
-      },
-      opacity: 0,
-      y: 50,
-      duration: 1,
-      stagger: 0.2,
+    mm.add('(min-width: 639px)', () => {
+      // Desktop & tablet: animate theo Y
+      gsap.from('.fade-in-box-card-reason', {
+        scrollTrigger: {
+          trigger: '.fade-in-box-card-reason',
+          start: 'top 80%',
+        },
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        stagger: 0.2,
+      })
     })
-  })
 
-  mm.add('(max-width: 639px)', () => {
-    // Mobile: animate theo X
-    gsap.from('.fade-in-box-card-reason', {
-      scrollTrigger: {
-        trigger: '.fade-in-box-card-reason',
-        start: 'top 80%',
-      },
-      opacity: 0,
-      x: 50,
-      duration: 1,
-      stagger: 0.2,
+    mm.add('(max-width: 639px)', () => {
+      // Mobile: animate theo X
+      gsap.from('.fade-in-box-card-reason', {
+        scrollTrigger: {
+          trigger: '.fade-in-box-card-reason',
+          start: 'top 80%',
+        },
+        opacity: 0,
+        x: 50,
+        duration: 1,
+        stagger: 0.2,
+      })
     })
-  })
-}, [])
+  }, [])
 
   return (
     <div className="flex flex-col gap-[80px] xsm:gap-[25px] bg-white px-[6rem] xsm:px-[1rem] pt-[65px] xsm:pt-[32px] pb-[116px] xsm:pb-[36px]">
@@ -103,11 +103,11 @@ const Reason = () => {
             reasons.map((reason, i) => (
               <div key={i} className="fade-in-box-card-reason xsm:w-[261px] w-full aspect-[410/450] flex flex-col">
                 <Image
-                className='w-full aspect-[410/450] rounded-[24px] object-cover mb-[20px] xsm:mb-[14px]'
-                src={reason.img}
-                alt={reason.title}
-                width={reason.width}
-                height={reason.heigh}
+                  className='w-full aspect-[410/450] rounded-[24px] object-cover mb-[20px] xsm:mb-[14px]'
+                  src={reason.img}
+                  alt={reason.title}
+                  width={reason.width}
+                  height={reason.heigh}
                 />
                 <p className="text-Blue-Primary font-bold text-[40px] xsm:text-[24px] leading-[100%] tracking-normal text-center xsm:text-left mb-[16px] xsm:mb-[8px]">{reason.title}</p>
                 <p className="text-black font-normal text-[16px] xsm:text-[14px] leading-[100%] tracking-normal text-center xsm:text-left whitespace-pre-line">{reason.text}</p>

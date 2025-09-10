@@ -54,7 +54,7 @@ const Hero = () => {
   }, [])
 
   return (
-    <div className="fade-section w-full h-full bg-Blue-Primary">
+    <div className="fade-section w-full h-full bg-Blue-Primary backdrop-blur-[4px]">
       <div className="flex flex-col gap-7 justify-center items-center font-montserrat px-[6rem] xsm:px-[1rem] pt-[99px] xsm:pt-[37px] pb-[58px] xsm:pb-[32px]">
         <div className="w-full flex flex-col gap-[15px] items-center justify-center text-center text-white pb-[26px] xsm:pb-0">
           <h1 className="font-bold text-[64px] xsm:text-[24px] leading-[122%] tracking-normal">Bạn có ý định gửi hàng ?</h1>

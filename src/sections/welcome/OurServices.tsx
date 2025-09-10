@@ -64,15 +64,34 @@ const OurServices = () => {
   }, [isMobile])
 
   useGSAP(() => {
-    gsap.from('.fade-in-box-card-step-services', {
-      scrollTrigger: {
-        trigger: '.fade-in-box-card-step-services',
-        start: 'top 80%',
-      },
-      opacity: 0,
-      x: 50,
-      duration: 1,
-      stagger: 0.2,
+    const mm = gsap.matchMedia()
+
+    mm.add('(min-width: 639px)', () => {
+      // Desktop & tablet: animate theo Y
+      gsap.from('.fade-in-box-card-step-services', {
+        scrollTrigger: {
+          trigger: '.fade-in-box-card-step-services',
+          start: 'top 80%',
+        },
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        stagger: 0.2,
+      })
+    })
+
+    mm.add('(max-width: 639px)', () => {
+      // Mobile: animate theo X
+      gsap.from('.fade-in-box-card-step-services', {
+        scrollTrigger: {
+          trigger: '.fade-in-box-card-step-services',
+          start: 'top 80%',
+        },
+        opacity: 0,
+        x: 50,
+        duration: 1,
+        stagger: 0.2,
+      })
     })
   }, [])
 
