@@ -77,9 +77,33 @@ const OurServices = () => {
   }, [])
 
   return (
-    <div className='px-[80px] xsm:p-0 bg-white'>
+    <div className='px-[80px] xsm:p-0 bg-white relative'>
+      {/* Bg Pc */}
+      <Image
+        src='/welcome/ellipse-1.png'
+        alt=''
+        className='xsm:hidden absolute top-[-100px] left-0 backdrop-blur-[271.1px]'
+        width={765}
+        height={902}
+      />
+      <Image
+        src='/welcome/ellipse-2.png'
+        alt=''
+        className='xsm:hidden absolute top-[-100px] right-0 backdrop-blur-[100px]'
+        width={753}
+        height={753}
+      />
 
-      <div className="relative flex flex-col gap-[60px] xsm:gap-[26px] bg-white pb-[116px] xsm:pb-[52px] pt-[40px] rounded-[50px] xsm:rounded-none bg-[url(/welcome/bg-ourservices.png)] xsm:bg-[url(/welcome/bg-ourservices-mb.png)] bg-cover bg-no-repeat">
+      {/* Bg mb */}
+      <Image
+        src='/welcome/ellipse-mb.png'
+        alt=''
+        className='hidden xsm:block absolute bottom-[-50px] right-[-50px] backdrop-blur-[64px]'
+        width={359}
+        height={346}
+      />
+
+      <div className="relative flex flex-col gap-[60px] xsm:gap-[26px] bg-[rgba(255,255,255,0.73)] pb-[116px] xsm:pb-[52px] pt-[40px] rounded-[50px] shadow-[0px_2px_6.4px_-1px_#13102208] backdrop-blur-[12px] xsm:rounded-none">
 
         {/* Header */}
         <div className="flex flex-col items-center justify-center gap-[12px]">
@@ -89,7 +113,7 @@ const OurServices = () => {
 
         {/* List */}
         <div ref={containerRef} className='overflow-hidden'>
-          <div ref={contentRef} className="max-w-[1299px] xsm:max-w-max xsm:w-max mx-auto xsm:pl-[56px] xsm:pr-[28px] flex-wrap xsm:flex-nowrap flex justify-center gap-[68px]">
+          <div ref={contentRef} className="max-w-[1299px] xsm:max-w-max xsm:w-max mx-auto xsm:pl-[53.848px] xsm:pr-[28px] flex-wrap xsm:flex-nowrap flex justify-center gap-[68px]">
             {
               ourServices.map((step, i) => (
                 <div key={i} className="fade-in-box-card-step-services bg-white w-[370px] xsm:w-[249px] h-full flex flex-col rounded-[20px] border border-[#E3DBDB] pl-[70px] xsm:pl-[47px] pt-[35px] pb-[46px] xsm:pb-[32px] relative">
