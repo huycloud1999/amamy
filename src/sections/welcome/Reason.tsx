@@ -89,28 +89,28 @@ const Reason = () => {
   }, [])
 
   return (
-    <div className="flex flex-col gap-[80px] xsm:gap-[25px] bg-white px-[6rem] xsm:px-[1rem] pt-[65px] xsm:pt-[32px] pb-[116px] xsm:pb-[36px]">
+    <div className="flex flex-col gap-[4.167rem] xsm:gap-[1.302rem] bg-white pt-[3.385rem] xsm:pt-[1.667rem] pb-[6.042rem] xsm:pb-[1.875rem]">
       {/* Header */}
-      <div className="flex flex-col items-center justify-center gap-[30px] xsm:gap-[16px]">
-        <p className="text-Blue-Primary font-semibold text-[32px] xsm:text-[16px] leading-[28px] tracking-normal">Lý do nên chọn gửi hàng tại Amamy?</p>
-        <p className="w-[1147px] xsm:w-full font-bold text-[40px] xsm:text-[20px] leading-[100%] tracking-normal text-center">Amamy dịch vụ Logistic với 4 năm kinh nghiệm và hơn 18.000 khách hàng Việt Nam tại nước ngoài</p>
+      <div className="flex flex-col items-center justify-center gap-[1.563rem] xsm:gap-[0.833rem] px-[6rem] xsm:px-[1rem]">
+        <p className="text-Blue-Primary font-semibold text-[1.667rem] xsm:text-[0.833rem] leading-[1.458rem] tracking-normal">Lý do nên chọn gửi hàng tại Amamy?</p>
+        <p className="w-[59.74rem] xsm:w-full font-bold text-[2.083rem] xsm:text-[1.042rem] leading-[100%] tracking-normal text-center">Amamy dịch vụ Logistic với 4 năm kinh nghiệm và hơn 18.000 khách hàng Việt Nam tại nước ngoài</p>
       </div>
 
       {/* List */}
       <div ref={containerGalleryRef} className='overflow-hidden flex xsm:block justify-center items-center'>
-        <div ref={contentGalleryRef} className="flex justify-center items-start gap-[97px] xsm:gap-[10px] w-max">
+        <div ref={contentGalleryRef} className="flex justify-center items-start gap-[5.052rem] xsm:gap-[0.521rem] w-max px-[6rem] xsm:px-[1rem]">
           {
             reasons.map((reason, i) => (
-              <div key={i} className="fade-in-box-card-reason xsm:w-[261px] w-full aspect-[410/450] flex flex-col">
+              <div key={i} className="fade-in-box-card-reason xsm:w-[13.594rem] w-full aspect-[410/450] flex flex-col">
                 <Image
-                  className='w-full aspect-[410/450] rounded-[24px] object-cover mb-[20px] xsm:mb-[14px]'
+                  className='w-full aspect-[410/450] rounded-[1.25rem] object-cover mb-[1.042rem] xsm:mb-[0.729rem]'
                   src={reason.img}
                   alt={reason.title}
                   width={reason.width}
                   height={reason.heigh}
                 />
-                <p className="text-Blue-Primary font-bold text-[40px] xsm:text-[24px] leading-[100%] tracking-normal text-center xsm:text-left mb-[16px] xsm:mb-[8px]">{reason.title}</p>
-                <p className="text-black font-normal text-[16px] xsm:text-[14px] leading-[100%] tracking-normal text-center xsm:text-left whitespace-pre-line">{reason.text}</p>
+                <p className="text-Blue-Primary font-bold text-[2.083rem] xsm:text-[1.25rem] leading-[100%] tracking-normal text-center xsm:text-left mb-[0.833rem] xsm:mb-[0.417rem]">{reason.title}</p>
+                <p className="text-black font-normal text-[0.833rem] xsm:text-[0.729rem] leading-[100%] tracking-normal text-center xsm:text-left whitespace-pre-line">{reason.text}</p>
               </div>
             ))
           }

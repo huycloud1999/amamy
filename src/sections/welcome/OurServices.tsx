@@ -96,19 +96,19 @@ const OurServices = () => {
   }, [])
 
   return (
-    <div className='px-[80px] xsm:p-0 bg-white relative'>
+    <div className='px-[4.167rem] xsm:p-0 bg-white relative'>
       {/* Bg Pc */}
       <Image
         src='/welcome/ellipse-1.png'
         alt=''
-        className='xsm:hidden absolute top-[-100px] left-0 backdrop-blur-[271.1px]'
+        className='xsm:hidden absolute top-[-5.208rem] left-0 backdrop-blur-[14.12rem]'
         width={765}
         height={902}
       />
       <Image
         src='/welcome/ellipse-2.png'
         alt=''
-        className='xsm:hidden absolute top-[-100px] right-0 backdrop-blur-[100px]'
+        className='xsm:hidden absolute top-[-5.208rem] right-0 backdrop-blur-[5.208rem]'
         width={753}
         height={753}
       />
@@ -117,36 +117,36 @@ const OurServices = () => {
       <Image
         src='/welcome/ellipse-mb.png'
         alt=''
-        className='hidden xsm:block absolute bottom-[-50px] right-[-50px] backdrop-blur-[64px]'
+        className='hidden xsm:block absolute bottom-[-2.604rem] right-[-2.604rem] backdrop-blur-[3.333rem]'
         width={359}
         height={346}
       />
 
-      <div className="relative flex flex-col gap-[60px] xsm:gap-[26px] bg-[rgba(255,255,255,0.73)] pb-[116px] xsm:pb-[52px] pt-[40px] rounded-[50px] shadow-[0px_2px_6.4px_-1px_#13102208] backdrop-blur-[12px] xsm:rounded-none">
+      <div className="relative flex flex-col gap-[3.125rem] xsm:gap-[1.354rem] bg-[rgba(255,255,255,0.73)] pb-[6.042rem] xsm:pb-[2.708rem] pt-[2.083rem] rounded-[2.604rem] shadow-[0px_2px_6.4px_-1px_#13102208] backdrop-blur-[0.625rem] xsm:rounded-none">
 
         {/* Header */}
-        <div className="flex flex-col items-center justify-center gap-[12px]">
-          <p className="text-Blue-Primary font-semibold text-[20px] xsm:text-[14px] leading-[28px] tracking-normal">Dịch vụ của chúng tôi</p>
-          <p className="font-bold text-[50px] xsm:text-[24px] leading-[60px] xsm:leading-[30px] tracking-normal text-center">Quy Trình Gửi Hàng</p>
+        <div className="flex flex-col items-center justify-center gap-[0.625rem]">
+          <p className="text-Blue-Primary font-semibold text-[1.042rem] xsm:text-[0.729rem] leading-[1.458rem] tracking-normal">Dịch vụ của chúng tôi</p>
+          <p className="font-bold text-[2.604rem] xsm:text-[1.25rem] leading-[3.125rem] xsm:leading-[1.563rem] tracking-normal text-center">Quy Trình Gửi Hàng</p>
         </div>
 
         {/* List */}
         <div ref={containerRef} className='overflow-hidden'>
-          <div ref={contentRef} className="max-w-[1299px] xsm:max-w-max xsm:w-max mx-auto xsm:pl-[53.848px] xsm:pr-[28px] flex-wrap xsm:flex-nowrap flex justify-center gap-[68px]">
+          <div ref={contentRef} className="max-w-[67.656rem] xsm:max-w-max xsm:w-max mx-auto xsm:pl-[2.823rem] xsm:pr-[1.458rem] flex-wrap xsm:flex-nowrap flex justify-center gap-[3.542rem]">
             {
               ourServices.map((step, i) => (
-                <div key={i} className="fade-in-box-card-step-services bg-white w-[370px] xsm:w-[249px] h-full flex flex-col rounded-[20px] border border-[#E3DBDB] pl-[70px] xsm:pl-[47px] pt-[35px] pb-[46px] xsm:pb-[32px] relative">
-                  <span className="font-semibold text-[18px] xsm:text-[16px] leading-[28px] tracking-normal text-[#727272]" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>
+                <div key={i} className="fade-in-box-card-step-services bg-white w-[19.271rem] xsm:w-[12.969rem] h-full flex flex-col rounded-[1.042rem] border border-[#E3DBDB] pl-[3.646rem] xsm:pl-[2.448rem] pt-[1.823rem] pb-[2.396rem] xsm:pb-[1.667rem] relative">
+                  <span className="font-semibold text-[0.938rem] xsm:text-[0.833rem] leading-[1.458rem] tracking-normal text-[#727272]" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>
                     {String(step.step).padStart(2, '0')}
                   </span>
-                  <h3 className="text-Blue-Primary font-bold text-[22px] xsm:text-[16px] leading-[30px] tracking-normal whitespace-pre-line">
+                  <h3 className="text-Blue-Primary font-bold text-[1.146rem] xsm:text-[0.833rem] leading-[1.563rem] tracking-normal whitespace-pre-line">
                     {step.title}
                   </h3>
-                  <p className="w-[260px] xsm:w-[166px] text-[#727272] font-normal text-[14px] leading-[30px] tracking-normal">
+                  <p className="w-[13.542rem] xsm:w-[8.646rem] text-[#727272] font-normal text-[0.729rem] leading-[1.563rem] tracking-normal">
                     {step.text}
                   </p>
 
-                  <div className="z-1 bg-white absolute left-0 -translate-x-1/2 top-[40px] size-[80px] xsm:size-[71px] p-[19px] rounded-full border border-Blue-Primary flex justify-center items-center">
+                  <div className="z-1 bg-white absolute left-0 -translate-x-1/2 top-[2.083rem] size-[4.167rem] xsm:size-[3.698rem] p-[0.99rem] rounded-full border border-Blue-Primary flex justify-center items-center">
                     <Image
                       className=''
                       src={step.icon}

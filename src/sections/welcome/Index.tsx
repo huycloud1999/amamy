@@ -32,7 +32,7 @@ const WelcomePage = ({
   currencyExchangeRateData,
 }: Props) => {
   return (
-    <div className='w-full'>
+    <div className='w-full overflow-hidden'>
       <Hero />
       <Question />
       <Banner
